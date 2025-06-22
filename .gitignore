@@ -4,3 +4,6 @@ training_data
 .idea
 # Ignore Python cache files
 __pycache__/
+*.png
+models
+*.tif
