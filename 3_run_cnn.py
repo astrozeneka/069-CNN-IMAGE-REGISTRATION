@@ -224,12 +224,20 @@ def plot_training_curve(losses, save_path="training_curve.png"):
     plt.show()
     print(f"Training curve saved to: {save_path}")
 
+
+# Load the epoch numbers from the command line arguments
+import argparse
+parser = argparse.ArgumentParser(description="Train AffineNet on image tiles")
+parser.add_argument('--epochs', type=int, default=100,
+                    help='Number of epochs to train the model')
+args = parser.parse_args()
+
 if __name__ == '__main__':
 
     # Variables
     DATA_DIR = "training_data"
     BATCH_SIZE = 8
-    NUM_EPOCHS = 4
+    NUM_EPOCHS = args.epochs  # Use command line argument for epochs
     LEARNING_RAGE = 1e-4
     TRAIN_SPLIT = 0.8  # 80% for training, 20% for validation
 
